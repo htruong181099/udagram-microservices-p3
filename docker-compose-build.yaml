@@ -3,20 +3,24 @@ services:
   reverseproxy:
     build:
       context: ./udagram-reverseproxy
-      cache_from: hoangtruong181099/udagram-reverseproxy
+      cache_from:
+        - hoangtruong181099/udagram-reverseproxy
     image: hoangtruong181099/udagram-reverseproxy
   backend_user:
     build:
       context: ./udagram-api-user
-      cache_from: hoangtruong181099/udagram-api-user
+      cache_from:
+        - hoangtruong181099/udagram-api-user
     image: hoangtruong181099/udagram-api-user
   backend_feed:
     build:
       context: ./udagram-api-feed
-      cache_from: hoangtruong181099/udagram-api-feed
+      cache_from:
+        - hoangtruong181099/udagram-api-feed
     image: hoangtruong181099/udagram-api-feed
   frontend:
     build:
       context: ./udagram-frontend
-      cache_from: hoangtruong181099/udagram-frontend
+      cache_from:
+        - hoangtruong181099/udagram-frontend
     image: hoangtruong181099/udagram-frontend:local
