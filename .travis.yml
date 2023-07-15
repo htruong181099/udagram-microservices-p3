@@ -12,7 +12,7 @@ install:
 # Scripts to be run such as tests
 before_script:
   - docker --version # print the version for logging
-  - docker compose version
+  - docker-compose version
 
 script:
   - docker-compose -f docker-compose-build.yaml build --parallel
