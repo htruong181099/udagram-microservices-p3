@@ -7,6 +7,8 @@ import { IndexRouter } from './controllers/v0/index.router';
 import { config } from './config/config';
 import { V0_USER_MODELS } from './controllers/v0/model.index';
 
+const { v4: uuidv4 } = require('uuid');
+
 (async () => {
 	await sequelize.addModels(V0_USER_MODELS);
 
@@ -39,7 +41,22 @@ import { V0_USER_MODELS } from './controllers/v0/model.index';
 
 	//add request logging
 	app.use((req: Request, res: Response, next: NextFunction) => {
-		console.log(`${req.method} ${req.url} ${new Date().toUTCString()} `);
+		const pid = uuidv4();
+		req.pid = pid;
+		console.log(
+			`${req.method} - ${req.url} - ${new Date().toUTCString()}: ${pid}`
+		);
+		next();
+	});
+
+	app.use((req: Request, res: Response, next: NextFunction) => {
+		res.on('finish', () => {
+			console.log(
+				`${req.method} - ${req.url} - ${new Date().toUTCString()}: ${
+					req.pid
+				} - ${res.statusCode}`
+			);
+		});
 		next();
 	});
 
