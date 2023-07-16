@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: hoangtruong181099/udagram-frontend:prodv2
+          image: hoangtruong181099/udagram-frontend:prodv3
+          imagePullPolicy: Always
           resources:
             requests:
               memory: '64Mi'
