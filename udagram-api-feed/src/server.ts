@@ -38,7 +38,8 @@ import { V0_FEED_MODELS } from './controllers/v0/model.index';
 
 	//add request logging
 	app.use((req: Request, res: Response, next: NextFunction) => {
-		console.log(`${req.method} ${req.url} ${Date.now().toLocaleString()} `);
+		console.log(`${req.method} ${req.url} ${new Date().toUTCString()} `);
+		next();
 	});
 
 	app.use('/api/v0/', IndexRouter);
