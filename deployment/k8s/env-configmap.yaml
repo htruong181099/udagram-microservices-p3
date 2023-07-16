@@ -4,8 +4,8 @@ data:
   AWS_BUCKET: udagram-micro-htm14-dev
   AWS_PROFILE: default
   AWS_REGION: us-east-1
-  POSTGRESS_DB: postgres
-  POSTGRESS_HOST: udagram-htm14-micro.cgzhp6x2wmgc.us-east-1.rds.amazonaws.com
+  POSTGRES_DB: postgres
+  POSTGRES_HOST: udagram-htm14-micro.cgzhp6x2wmgc.us-east-1.rds.amazonaws.com
   URL: http://localhost:8100
 metadata:
   name: env-config

@@ -23,4 +23,4 @@ services:
       context: ../../udagram-frontend
       cache_from:
         - hoangtruong181099/udagram-frontend
-    image: hoangtruong181099/udagram-frontend:prod
+    image: hoangtruong181099/udagram-frontend:prodv2
