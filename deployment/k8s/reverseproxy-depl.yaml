@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: reverseproxy
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: reverseproxy
